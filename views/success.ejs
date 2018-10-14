@@ -1,0 +1,48 @@
+<% include partials/header %>
+</head>
+<body>
+	<% include partials/navbar %>
+	<div class="container">
+		<input type="button" onclick="printDiv('printableArea')" value="Print Invoice" />
+		<div id="printableArea">
+			<h1><%=currentUser.fullname%></h1>
+			<h3><%=currentUser.contact%> | <%=currentUser.address%> | </h3>
+			<div id="main">
+				<h1><span id="totalheading">Total : Rs.<span id="total"></span></span></h1>
+	    		<ul class="list-group">
+	        		<% invoice.carts.forEach(function(cart){ %>
+	           			<li class="list-group-item list-group-item-info custom">
+	                		<h3><strong> <%= cart.name %></strong> 
+	                		<strong>
+	                			<div id="price" style="float: right;">Rs.
+	                    			<span id="pricerate"><%= cart.price%></span>
+	                			</div>
+	                		</strong></h3>
+	            		</li>
+	        		<%});%>
+	    		</ul>
+			</div>
+			<!-- end of id main -->
+		</div>
+		<!-- end of printable area -->
+		<div style="text-align: center;"><h2>Thank you for shopping. Visit Again !</h2></div>
+	</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript">
+    var temp=0;
+    var t=document.querySelector("#total");
+    var listItems = $("#main li span");
+    listItems.each(function(idx, li) {
+        temp=temp+parseInt(li.textContent);
+});
+    total.innerHTML=temp;
+		function printDiv(divName) {
+		     var printContents = document.getElementById(divName).innerHTML;
+		     var originalContents = document.body.innerHTML;
+		     document.body.innerHTML = printContents;
+		     window.print();
+		     document.body.innerHTML = originalContents;
+		}
+</script>
+
+<% include partials/footer %>

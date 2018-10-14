@@ -1,0 +1,39 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+#back-img{
+	background-image: url("/images/registerback.jpg");
+	width: 100%;
+	height: 88vh;
+	background-position: center;
+	background-size: cover;
+	filter: blur(5px);
+}
+
+#heading{
+	text-align: center;
+	font-size: 2rem;
+	background-color: #0069D9;
+	width: 50%;
+	color: white;
+	border-radius: 10px;
+	letter-spacing: 3px;
+	position: absolute;
+	top: 15%;
+	left:25%;
+	font-family: 'Merienda', cursive;
+}
+
+.main-block{
+	position: absolute;
+	width: 50%;
+	height: 50vh;
+	top: 20%;
+	left: 25%;
+}
+
+.fields{
+	margin:2% 0%;
+}

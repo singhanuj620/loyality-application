@@ -1,0 +1,86 @@
+<!-- importing header file -->
+<% include partials/header %>
+<style type="text/css">
+    body{
+    margin: 0;
+    padding: 0;
+    background-color: lightyellow;
+}
+
+#main{
+    border-radius: 10px;
+    width:80%;
+    height: 80%;
+    position: absolute;
+    left:10%;
+    top:13%;
+}
+
+.custom{
+    margin-bottom: 1%;
+}
+
+#price{
+    float: right;
+    color: red;
+}
+
+#pricerate{
+    color: green;
+}
+
+#totalheading{
+    float: right;
+}
+
+
+</style>
+</head>
+<body>
+<% include partials/navbar %>
+
+<div id="main">
+    <h1 style="letter-spacing: 9px; margin-bottom: 3%;">My Cart 
+    <span id="totalheading">Total : Rs.<span id="total"></span></span>
+    </h1>
+    <span id="temp"></span>
+    <ul class="list-group">
+        <% profile.carts.forEach(function(cart){ %>
+            <li class="list-group-item list-group-item-info custom">
+                <form action="/profile/<%=currentUser._id %>/mycart/<%=cart._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-xs btn-danger" style="float: left; margin-right: 1%;"><i class="fa fa-trash"></i></button>
+                </form>
+                <strong> <%= cart.name %></strong> 
+                <strong><div id="price">Rs.
+                    <span id="pricerate"><%= cart.price%></span>
+                </strong></div>
+                
+            </li>
+        <%});%>
+    </ul>
+    <a href="/product"><button class="btn btn-md btn-primary" style="margin: 2%;">Continue Shopping !!</button></a>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript">
+    var temp=0;
+    var t=document.querySelector("#total");
+    var listItems = $("#main li span");
+    listItems.each(function(idx, li) {
+        temp=temp+parseInt(li.textContent);
+});
+    total.innerHTML=temp;
+</script>
+<form action="/profile/<%=currentUser._id %>/success" method="POST">
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_TJCDnN9hNwJhECwNzm6p5anQ"
+        data-amount=""
+        data-name="Cart checkout"
+        data-description="Cart Checkout for Loyality Program"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-locale="auto">
+      </script>
+    </form>
+    </div>
+<!-- importing footer file -->
+<% include partials/footer%>

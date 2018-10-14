@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Store At Your Door Step | Buy Products Online At Very Affordable Price</title>
+	<meta charset="utf-8">
+	<!-- importing bootstrap from Bootstrap CDN -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Gaegu|Merienda:400,700" rel="stylesheet">
+	<script type="text/javascript">
+    var time=2000;
+    var images=[];
+    var i=0;
+    images[0]="https://static.digit.in/default/2bd0c7c9514ad1c5f0f133afd03cbf4c5ae2f757.jpeg";
+    images[1]="https://static.digit.in/default/4f2588a7b4e6bba52ae133a5609a4550d83f4987.jpeg";
+    images[2]="https://static.digit.in/default/artImg198x166_9479.jpg";
+    images[3]="https://static.digit.in/default/1a096c74c71e2cdb8ce0fde7b1fe94113c02e498.jpeg";
+    images[4]="https://static.digit.in/default/74aca9660d20107ee891556f01ea0a1b8bab2e15.jpeg";
+    images[5]="https://static.digit.in/default/81cebdb3dde9ddce404ace83ee147af9d1eca1f4.jpeg";
+
+    function changeImg(){
+        document.slide.src=images[i];
+        if(i<images.length-1)
+        {
+            i++;
+        }
+        else{
+            i=0;
+        }
+
+        setTimeout("changeImg()",time);
+    }
+
+    window.onload=changeImg;
+</script>
+

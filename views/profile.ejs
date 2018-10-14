@@ -1,0 +1,65 @@
+<!-- importing header file -->
+<% include partials/header %>
+<style type="text/css">
+    body{
+        background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    }
+</style>
+</head>
+<body>
+<% include partials/navbar %>
+<div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="letter-spacing: 4px; font-size: 3rem;"><strong><%=profile.fullname%></strong></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-4 col-lg-4 " align="center">
+                    <img alt="User Picture" src="<%=profile.image%>" style="height: 130px; width: 180px;">
+                </div>
+                
+                <div class=" col-md-8 col-lg-8 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                        <tr>
+                            <td>Full Name :</td>
+                            <td><%=profile.fullname%></td>
+                        </tr>
+                        <tr>
+                            <td>Username : </td>
+                            <td><%=profile.username%></td>
+                        </tr>
+                        <tr>
+                            <td>Contact : </td>
+                            <td><%=profile.contact%></td>
+                        </tr>
+                        <tr>
+                            <td>Address : </td>
+                            <td><%=profile.address%></td>
+                        </tr>
+                        <tr>
+                            <td>State : </td>
+                            <td><%=profile.state%></td>
+                        </tr>
+                        <tr>
+                            <td>Pincode : </td>
+                            <td><%=profile.pincode%></td>
+                        </tr>
+                        <tr>
+                            <td>Email : </td>
+                            <td><%=profile.email%></td>
+                        </tr>
+                    </tbody>
+                </table> 
+                <a href="/profile/<%=profile._id%>/mycart" class="btn btn-success">My Cart</a>
+                <a href="/profile/<%=currentUser._id%>/edit" class="btn btn-primary">Edit Profile</a>
+            </div>
+        </div>
+    </div>           
+</div>
+
+<!-- importing footer file -->
+<% include partials/footer%>

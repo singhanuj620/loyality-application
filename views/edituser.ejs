@@ -1,0 +1,76 @@
+<!-- importing header file -->
+<% include partials/header %>
+
+<style type="text/css">
+	body{
+	margin: 0;
+	padding: 0;
+}
+
+#back-img{
+	background-image: url("/images/registerback.jpg");
+	width: 100%;
+	height: 135vh;
+	background-position: center;
+	background-size: cover;
+	filter: blur(5px);
+}
+
+#heading{
+	text-align: center;
+	font-size: 2rem;
+	background-color: #0069D9;
+	width: 50%;
+	color: white;
+	border-radius: 10px;
+	letter-spacing: 3px;
+	position: absolute;
+	top: 15%;
+	left:25%;
+}
+
+.main-block{
+	position: absolute;
+	width: 50%;
+	height: 50vh;
+	top: 20%;
+	left: 25%;
+}
+
+.fields{
+	margin:2% 0%;
+}
+</style>
+</head>
+<body>
+<% include partials/navbar%>
+<div id="back-img"></div>
+	<div id="heading">
+		<span><strong>Update Profile</strong></span>
+	</div>
+		<div class="container main-block">
+			<form action="/profile/<%=user._id%>?_method=PUT" method="POST">
+				<label>Fullname</label>
+				<input class="form-control fields" type="text" name="user[fullname]" value="<%=user.fullname%>">
+				<label>Username</label>
+				<input class="form-control fields" type="text" name="user[username]" value="<%=user.username%>">
+				<label>Contact</label>
+				<input class="form-control fields" type="text" name="user[contact]" value="<%=user.contact%>">
+				<label>Password</label>
+				<input class="form-control fields" type="password" name="user[password]" value="<%=user.password%>">
+				<label>Image URL</label>
+				<input class="form-control fields" type="text" name="user[image]" value="<%=user.image%>">
+				<label>Email</label>
+				<input class="form-control fields" type="email" name="user[email]" value="<%=user.email%>">
+				<label>State</label>
+				<input class="form-control fields" type="text" name="user[state]" value="<%=user.state%>">
+				<label>Address</label>
+				<input class="form-control fields" type="text" name="user[address]" value="<%=user.address%>">
+				<label>Pincode</label>
+				<input class="form-control fields" type="text" name="user[pincode]" value="<%=user.pincode%>">
+				<button type="submit" class="form-control btn btn-lg btn-success fields">Update</button>
+			</form>
+		</div>
+
+<!-- importing footer file -->
+<% include partials/footer%>

@@ -1,0 +1,48 @@
+<%include partials/header%>
+<style type="text/css">
+	body {
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+	}
+
+	.block{
+		background-color: lightgreen;
+		margin-top: 10%;
+	}
+	#heading{
+		color: black;
+		font-size: 2rem;
+		text-align: center;
+		font-family: 'Merienda', cursive;
+	}
+</style>
+</head>
+<body>
+	<%include partials/navbar%>
+	<div class="container block">
+		<div id="heading"><h2><strong>Product Confirmation Before Adding To Cart</strong></h2></div>
+		<div class="row">
+			<div class="container">
+				<form action="/profile/<%=currentUser._id%>/mycart" method="POST">
+					<div class="form-group">
+			    		<h3><label for="name"><strong>Product Name : </strong> <%=cartdetail.name%></label>
+			    		<input type="hidden" class="form-control" id="name" size=80 value="<%=cartdetail.name%>" name="name" readonly>
+			  		</div></h3>
+			  		<div class="form-group">
+			    		<h3><label for="price"><strong>Product Price : </strong><%=cartdetail.price%></label>
+			    		<input type="hidden" class="form-control" id="price" size=80 value="<%=cartdetail.price%>" name="price" readonly>
+			  		</div></h3>
+
+			  		
+
+			  		<div class="form-group" style="float: right; letter-spacing: 2px; display: inline;">
+			  			<button class="btn btn-primary btn-lg" id="bridge"><strong>Proceed To Cart</strong></button>
+			  		</div>
+			  	</form>
+			  	<div class="form-group" style="display: inline;">
+			  			<a href="/product" style="color: inherit;"><button class="btn btn-lg btn-danger">Go Back</button></a>
+			  		</div>
+		  	</div>
+		</div>
+	</div>
+<!-- importing footer file -->
+<% include partials/footer%>

@@ -1,0 +1,73 @@
+
+<!-- importing header file -->
+<% include partials/header %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<% include partials/navbar%>
+    <div class="main">
+
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="images/signin-image.jpg" alt="sing up image"></figure>
+                        <a href="/" class="signup-image-link">Already a user? Sign In</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Sign Up</h2>
+                        <form class="register-form" id="login-form" action="/register" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="fullname" placeholder="Full Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="username" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="contact" placeholder="Contact Number">
+                            </div>
+                            <div class="form-group">
+                            	<input type="text" name="image" value=https://vignette.wikia.nocookie.net/sote-rp/images/c/c4/User-placeholder.png/revision/latest/scale-to-width-down/480?cb=20150624004222">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="state" placeholder="State">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="address" placeholder="Address">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="pincode" placeholder="Pincode">
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Sign Up"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+<!-- importing footer file -->
+<% include partials/footer%>

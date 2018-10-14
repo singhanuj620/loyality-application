@@ -1,0 +1,163 @@
+<!-- importing header file -->
+<% include partials/header %>
+<script type=""></script>
+<style type="text/css">
+body {
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+}
+.emp-profile{
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+.profile-img{
+    text-align: center;
+}
+.profile-img img{
+    width: 70%;
+    height: 100%;
+}
+.profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -20%;
+    width: 70%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+}
+.profile-img .file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+.profile-head h5{
+    color: #333;
+}
+.profile-head h6{
+    color: #0062cc;
+}
+.profile-edit-btn{
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+}
+.proile-rating{
+    font-size: 12px;
+    color: #818182;
+    margin-top: 5%;
+}
+.proile-rating span{
+    color: #495057;
+    font-size: 15px;
+    font-weight: 600;
+}
+.profile-head .nav-tabs{
+    margin-bottom:5%;
+}
+.profile-head .nav-tabs .nav-link{
+    font-weight:600;
+    border: none;
+}
+.profile-head .nav-tabs .nav-link.active{
+    border: none;
+    border-bottom:2px solid #0062cc;
+}
+.profile-work{
+    padding: 14%;
+    margin-top: -15%;
+}
+.profile-work p{
+    font-size: 12px;
+    color: #818182;
+    font-weight: 600;
+    margin-top: 10%;
+}
+.profile-work a{
+    text-decoration: none;
+    color: #495057;
+    font-weight: 600;
+    font-size: 14px;
+}
+.profile-work ul{
+    list-style: none;
+}
+.profile-tab label{
+    font-weight: 600;
+}
+.profile-tab p{
+    font-weight: 600;
+    color: #0062cc;
+}
+
+.custom{
+	margin-left: 33%;
+}
+
+#desc li{
+    margin: 3%;
+}
+
+#imagee{
+    height: 200px;
+    width:300px;
+}
+
+</style>
+</head>
+<body>
+<% include partials/navbar %>
+<div class="container emp-profile">
+    <div class="row">
+        <div class="col-md-4">
+        <div class="profile-img">
+            	<img src="<%=pprofile.image%>" id="imagee">
+            	<br>
+            	<br>
+                    <button  id="addtocart" class="btn btn-lg btn-primary">Add to Cart</button>
+        </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="profile-head">
+                <h2 style="font-family: 'Merienda', cursive;"><%=pprofile.name%></h2>
+                <h4><%=pprofile.category%></h4>
+                <h3>Rs. <span id="tocart_price"><%=pprofile.price%></span></h3>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#">Description</a>
+                    </li>
+                </ul>
+                
+             <h4><ul style="list-style: none;" id="desc">
+                    <li> <strong>Name : </strong><span id="tocart_name" style="margin-left: 40%;"><%=pprofile.name%></span></li>
+                    <li> <strong>Brand : </strong><span style="margin-left: 39.5%;"><%=pprofile.brand%></span></li>
+                    <li> <strong>Category : </strong><span style="margin-left: 33.8%;"><%=pprofile.category%></span></li>
+                    <li> <strong>Price : </strong><span style="margin-left: 40.8%;"><%=pprofile.price%></span></li>
+                    <li> <strong>Warrenty : </strong><span style="margin-left: 34%;"><%=pprofile.warrenty%></span></li>
+                </ul></h4>   
+            </div>
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script>
+    $("#addtocart").on("click",function(){
+        var temp=document.querySelector("#tocart_name");
+        var tocartt_name=temp.innerHTML;
+        var temp=document.querySelector("#tocart_price");
+        var tocartt_price=temp.innerHTML;
+        //alert("Item Added To Cart");
+        var queryString = "?name=" + tocartt_name + "&price=" + tocartt_price;
+        window.location.href = "/tocart" + queryString;
+    });
+</script>
+<!-- importing footer file -->
+<% include partials/footer%>

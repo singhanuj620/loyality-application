@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Gaegu|Merienda:400,700" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		body{
+			height: 90vh;
+			background-image: url("/images/error.jpg");
+			background-size: cover;
+		}
+		.text{
+			font-family: 'Merienda', cursive;
+			}
+		#main{
+			padding-top: 5%;
+			padding-left: 22%;
+			font-size: 150px;
+			color: yellow;
+			text-shadow: 0px 7px 5px black,
+						 1px -4px 6px red;
+		}
+		#sub{
+			padding-top: 1%;
+			padding-left: 32%;
+			font-size: 60px;
+			color: white;
+			text-shadow: 0px 3px 5px yellow,
+						1px 8px 6px black;
+		}
+		#button{
+			margin-top: 8%;
+			margin-left: 34%;
+			font-size: 27px;
+			color: black;
+            letter-spacing: 3px;
+        }
+        
+	</style>
+</head>
+<body>
+    <%include partials/navbar%>
+	<div class="text">
+		<h1 id="main"> Error 404 </h1>
+		<h2 id="sub">Page Not Found</h2>
+		<a href="/" class="btn btn-lg btn-success" id="button" style="text-transform: uppercase;">Go Back To HomePage</a>
+</div>
+
+</body>
+</html>

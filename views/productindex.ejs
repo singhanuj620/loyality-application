@@ -1,0 +1,36 @@
+<%include partials/header%>
+<style type="text/css">
+.heading{
+    letter-spacing: 10px;
+    color: blue;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2%;
+    background-color: yellow;
+    font-family: 'Merienda', cursive;
+}
+</style>
+</head>
+<body>
+	<%include partials/navbar%>
+
+<div class="heading">Products</div>
+<div class="container">
+	<div class="row align-items-start ">
+		<% product.forEach(function(product){ %>
+			<div class="col-md-3 col-sm-6">
+	        	<div class="thumbnail">
+				    	<img style="height:200px;" src="<%=product.image %>">
+	            		<centre>
+	            			<div class="caption">
+	            				<h2> <%= product.name %> </h2>
+	            			</div>
+	            			<p><a href="/product/<%=product._id%>" class="btn btn-primary btn-lrg">More Info</a></p>
+	            		</centre>
+	        	</div>
+	     	</div>
+		<% }); %>
+	</div>
+</div>
+<!-- importing footer file -->
+<% include partials/footer%>
